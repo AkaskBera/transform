@@ -1,7 +1,9 @@
 *** Keywords *** 
 
 User is navigating to destination
-    Sleep  3
+    Wait until page contains  ${Dark_Mode_Txt}
+    Press Keys  None  ESC
+    Sleep  5
     Click Element  ${Dest_Label_Elem}
     Log to console  ${Txt_06}
     Click Element  ${Dest_Elem}
@@ -26,21 +28,56 @@ User fetches the table data
 User verifies the first transformation
     Wait until page contains  ${Qry_Result_Txt}
     ${Row_Count} =  Get Element Count  ${Tbl_Row}
+    ${Col_Count} =  Get Element Count  ${Tbl_Col}
     Log to console  ${Row_Count}
+    Log to console   ${Col_Count}
+    Table Header Should Contain  ${Table}  ${Field_Name_01}
     FOR  ${j}  IN RANGE  1  ${Row_Count}
-        ${Col_Name} =  Get Text  xpath=//table/thead/tr/th[${j}]
-        Log to console   ${Col_Name}
-        Exit For Loop If   "${Col_Name}" == "dept_loc"
+        ${Col_Value} =  Get Text  xpath=//table/tbody/tr/td[${j}]
+        Log to console   ${Col_Value}
+        Exit For Loop If   "${Col_Value}" == "India"
     END
-    Log to console  Transformation is added in the destination
+    Log to console  New field with value ${Col_Value} is added in the destination
 
 User verifies the next transformation
     Wait until page contains  ${Qry_Result_Txt}
     ${Row_Count} =  Get Element Count  ${Tbl_Row}
+    ${Col_Count} =  Get Element Count  ${Tbl_Col}
     Log to console  ${Row_Count}
+    Log to console   ${Col_Count}
+    Table Header Should Contain  ${Table}  ${Field_Name_01}
     FOR  ${j}  IN RANGE  1  ${Row_Count}
         ${Col_Value} =  Get Text  xpath=//table/tbody/tr/td[${j}]
         Log to console   ${Col_Value}
         Exit For Loop If   "${Col_Value}" == "${EMPTY}"
     END
-    Log to console  Another transformation is added in the destination
+    Log to console  Field value is removed in the destination
+
+User verifies the if transformation
+    Wait until page contains  ${Qry_Result_Txt}
+    ${Row_Count} =  Get Element Count  ${Tbl_Row}
+    ${Col_Count} =  Get Element Count  ${Tbl_Col}
+    Log to console  ${Row_Count}
+    Log to console   ${Col_Count}
+    Table Header Should Contain  ${Table}  ${Field_Name_01}
+    FOR  ${j}  IN RANGE  1  ${Row_Count}
+        Table Row Should Contain  ${Table}  1  ${Field_Value}
+        ${Col_Value} =  Get Text  xpath=//table/tbody/tr[1]/td[${j}]
+        Log to console   ${Col_Value}
+        Exit For Loop If   "${Col_Value}" == "India"
+    END
+    Log to console  If transformation is applied in the destination
+
+User verifies the else transformation
+    Wait until page contains  ${Qry_Result_Txt}
+    ${Row_Count} =  Get Element Count  ${Tbl_Row}
+    ${Col_Count} =  Get Element Count  ${Tbl_Col}
+    Log to console  ${Row_Count}
+    Log to console   ${Col_Count}
+    Table Header Should Contain  ${Table}  ${New_Field_Value_02}
+    FOR  ${j}  IN RANGE  1  ${Row_Count}
+        ${Col_Value} =  Get Text  xpath=//table/tbody/tr[1]/td[${j}]
+        Log to console   ${Col_Value}
+        Exit For Loop If   "${Col_Value}" == "${EMPTY}"
+    END
+    Log to console  Else transformation is applied in the destination

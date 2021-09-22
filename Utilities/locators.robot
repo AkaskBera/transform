@@ -47,28 +47,47 @@ ${Field_Name_Elem_01}       xpath://fs-option[text()=' Field Name ']
 ${If_Else_Elem}             xpath://div[text()=' If Else ']
 ${Rename_Field_Elem}        xpath://div[text()=' Rename Fields ']
 ${Field_Name_Elem_02}       xpath://input[@name='field-name']
-${Field_Name_02}            dept_no
+${Field_Name_02}            dept_name
 ${New_Field_Elem}           xpath://input[@name='new-name']
-${New_Field_Value_02}       dept_num
+${New_Field_Value_02}       dept_na
 ${Ovrview_Icon}             xpath://a[@iconname='overview']
 ${Src_Object_Elem}          xpath://searcharea[@placeholder='Search Objects']
 ${Src_Object_Text_Elem}     xpath://input[@placeholder='Search Objects']
 ${Vertical_Bar_Icon}        xpath://div[@class='status-actions-container']/button
 ${Run_Now_Opt}              xpath://hd-icon[@name='run-now']
+${Event_Field_Opt}          xpath://fs-option[text()=' Event Field ']
+${Field_Name_Txtbox}        xpath://input[@placeholder='Field Name']
+${Field_Name_03}            dept_name
+${Select_Field_Btn}         xpath://button[text()=' Select Field ']
+${Field_Value}              Marketing
 
-${Dest_Label_Elem} =        xpath://a[@iconname='destinations']
-${Txt_06} =                 User navigates to destination
-${Dest_Elem} =              xpath://span[text()=' #1 ']
-${Workbench_Link} =         xpath://a[@label='Workbench']
-${Txt_07} =                 User navigates to the workbench section
-${Dest_Name} =              Redshift01
-${Search_Icon_Elem} =       xpath://searcharea[@placeholder='Search Schema']
-${Txt_08} =                 User search for the destination table
-${Search_Bar_Elem} =        xpath://input[@type='text']
-${Tbl_Name} =               tablesql_demo_departments
-${Db_Query} =               SELECT * FROM "demo"."public"."tablesql_demo_departments";
-${Workbench_Elem} =         xpath://div[@class='CodeMirror-lines']
-${Txt_09} =                 User enters the select query and executes the query.
-${Run_Query_Btn} =          xpath://button[@class='btn btn-secondary btn-thumbnail-left']
-${Qry_Result_Txt} =         Query Results
-${Tbl_Row} =                xpath://table/tbody/tr
+#destination
+${Dest_Label_Elem}          xpath://a[@iconname='destinations']
+${Txt_06}                   User navigates to destination
+${Dest_Elem}                xpath://span[text()=' #1 ']
+${Workbench_Link}           xpath://a[@label='Workbench']
+${Txt_07}                   User navigates to the workbench section
+${Dest_Name}                Redshift01
+${Search_Icon_Elem}         xpath://searcharea[@placeholder='Search Schema']
+${Txt_08}                   User search for the destination table
+${Search_Bar_Elem}          xpath://input[@type='text']
+${Tbl_Name}                 ab_demo_departments
+${Db_Query}                 SELECT * FROM "demo"."public"."ab_demo_departments";
+${Workbench_Elem}           xpath://div[@class='CodeMirror-lines']
+${Txt_09}                   User enters the select query and executes the query.
+${Run_Query_Btn}            xpath://button[@class='btn btn-secondary btn-thumbnail-left']
+${Qry_Result_Txt}           Query Results
+${Tbl_Row}                  xpath://table/tbody/tr
+${Tbl_Col}                  xpath://table/thead/tr/th
+${Table}                    xpath://table[@class='data-table']
+
+#webhook
+${Base_Url}  https://beta-t.hevo.me/t
+${My_Session}  beta
+${End_Pt}  /g7iwqqfoe2
+${Pipeline_01}  xpath://div[text()=' Webhook01 ']
+${Event_Value_01}  agents
+${Field_Name_04}  agent_dept
+${New_Field_Value_03}  "Insurance"
+${Tbl_Name_01}  wb_agents
+${Db_Query_01}  SELECT * FROM "demo"."public"."wb_agents";

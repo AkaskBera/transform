@@ -13,7 +13,9 @@ User is alowed to login to Hevo
     Click Button  ${Login_Btn}
 
 User navigates to the pipleine
-    Sleep  3
+    Wait until page contains  ${Dark_Mode_Txt}
+    Press Keys  None  ESC
+    Sleep  5
     Click Element  ${Pipeline_Label_Elem}
     Click Element  ${Pipeline}
     Wait until element is visible  ${Transf_Elem}
@@ -87,6 +89,13 @@ User drags if-else transformation block and provides the details
     Click Element  ${Equals_Option}
     Input Text  ${Enter_Value_Txtbox}  ${Event_Value}
     Click Button  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn1}
+    Click Element  ${Event_Field_Opt}
+    Input Text  ${Field_Name_Txtbox}  ${Field_Name_03}
+    Click Button  ${Select_Field_Btn}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Field_Value}
+    Click Button  ${Add_Filter_Btn2}
 
 User gives the details of If block
     Drag And Drop By Offset  ${Add_Field_Elem}  540  0
@@ -101,6 +110,11 @@ User gives the details of If block
 User gives the details of Else block
     Scroll Element Into View  ${Rename_Field_Elem}
     Drag And Drop By Offset  ${Rename_Field_Elem}  240  -20
+    Click Button  ${Add_Filter_Btn1}
+    Click Element  ${Event_Type_Option}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Event_Value}
+    Click Button  ${Add_Filter_Btn2}
     Input Text  ${Field_Name_Elem_02}  ${Field_Name_02}
     Input Text  ${New_Field_Elem}  ${New_Field_Value_02}
 
