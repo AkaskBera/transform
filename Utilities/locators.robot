@@ -64,7 +64,7 @@ ${Field_Value}  Marketing
 #destination
 ${Dest_Label_Elem}  xpath://a[@iconname='destinations']
 ${Txt_06}  User navigates to destination
-${Dest_Elem}  xpath://span[text()=' #1 ']
+${Dest_Elem}  xpath://span[text()=' #6 ']
 ${Workbench_Link}  xpath://a[@label='Workbench']
 ${Txt_07}  User navigates to the workbench section
 ${Dest_Name}  Redshift01
@@ -73,7 +73,8 @@ ${Txt_08}  User search for the destination table
 ${Search_Bar_Elem}  xpath://input[@type='text']
 ${Tbl_Name}  ab_demo_departments
 ${Db_Query}  SELECT * FROM "demo"."public"."ab_demo_departments";
-${Workbench_Elem}  xpath://div[@class='CodeMirror-lines']
+${Workbench_Elem}  xpath://div[@class='CodeMirror-scroll']
+#//div[@class='CodeMirror-lines']
 ${Txt_09}  User enters the select query and executes the query.
 ${Run_Query_Btn}  xpath://button[@class='btn btn-secondary btn-thumbnail-left']
 ${Qry_Result_Txt}  Query Results
@@ -91,3 +92,19 @@ ${Field_Name_04}  agent_dept
 ${New_Field_Value_03}  "Insurance"
 ${Tbl_Name_01}  wb_agents
 ${Db_Query_01}  SELECT * FROM "demo"."public"."wb_agents";
+
+${Chage_Field_Value_Elem}  xpath://div[text()=' Change Field Values ']
+${Event_Value_02}  demo.dept_manager
+${Field_Name_05}  dept_no
+${Field_Value_Elem}  xpath://fs-option[text()=' Field Value ']
+${Field_Value_01}  d006
+${New_Field_Value_Txtbox_01}  xpath://input[@placeholder='New Value']
+${New_Field_Value_04}  "Dept006"
+${Event_Name_01}  demo.dept_manager
+${Tbl_Name_02}  tablemysql_demo_dept_manager01
+${Db_Query_02}  SELECT * FROM "demo"."public"."tablemysql_demo_dept_manager01";
+${Find_Replace_Elem}  xpath://div[text()=' Find & Replace ']
+${Find_Elem_txtbox}  xpath://input[@placeholder='Find']
+${Replace_Elem_Txtbox}  xpath://input[@placeholder='Replace']
+${Replace_Value}  D666
+${Match_Case_Checkbox}  xpath://mat-checkbox[@name='match-case']

@@ -18,7 +18,7 @@ User navigates to a pipeline and applies transformation
     And User runs the event again
 
 User is naviagting to destination and verifying the transformation
-    [Tags]  sanity01
+    [Tags]  destination01
     Given User is alowed to login to Hevo
     And User is navigating to destination
     When User navigates to workbench section of a destination
@@ -35,7 +35,7 @@ User applies another transformation along with the existing transformation
     And User runs the event again
 
 User is naviagting to destination and verifying new transformation
-    [Tags]  sanity02
+    [Tags]  destination02
     Given User is alowed to login to Hevo
     And User is navigating to destination
     When User navigates to workbench section of a destination
@@ -54,7 +54,7 @@ User is applying if-else transformation
     And User runs the event again
 
 User is naviagting to destination and verifying the if transformation
-    [Tags]  sanity03
+    [Tags]  destination03
     Given User is alowed to login to Hevo
     And User is navigating to destination
     When User navigates to workbench section of a destination
@@ -63,7 +63,7 @@ User is naviagting to destination and verifying the if transformation
     And User verifies the else transformation
 
 User is naviagting to destination and verifying the else transformation
-    [Tags]  sanity04
+    [Tags]  destination04
     Given User is alowed to login to Hevo
     And User is navigating to destination
     When User navigates to workbench section of a destination

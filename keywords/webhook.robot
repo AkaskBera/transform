@@ -42,7 +42,7 @@ User sends the Post request for ingestion
     ${Status_Code} =  Convert To String  ${response.status_code}
     Should Be Equal  ${Status_Code}  204
 
-User navigates to workbench section in destination
+User navigates to workbench section in destination for webhook
     Click Element  ${Workbench_Link}
     Page Should Contain  ${Dest_Name}
     Wait Until Element Is Visible  ${Search_Icon_Elem}
@@ -56,7 +56,7 @@ User fetches the webhook table data
     Press Keys  ${Workbench_Elem}  ${EMPTY}
     Click Element  ${Run_Query_Btn}
 
-User verifies the transformation
+User verifies the webhook transformation
     Wait until page contains  ${Qry_Result_Txt}
     ${Row_Count} =  Get Element Count  ${Tbl_Row}
     ${Col_Count} =  Get Element Count  ${Tbl_Col}

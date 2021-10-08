@@ -118,6 +118,67 @@ User gives the details of Else block
     Input Text  ${Field_Name_Elem_02}  ${Field_Name_02}
     Input Text  ${New_Field_Elem}  ${New_Field_Value_02}
 
+User drags change field value transformation and provide the details
+    Drag And Drop  ${Chage_Field_Value_Elem}  ${Workflow_Transf_Elem}
+    Click Button  ${Add_Filter_Btn1}
+    Click Element  ${Event_Type_Option}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Event_Value_02}
+    Click Button  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn3}
+    Click Element  ${Field_Name_Elem_01}
+    Click Element  ${Equals_Option}
+    Scroll Element Into View  ${Enter_Value_Txtbox}
+    Input Text  ${Enter_Value_Txtbox}  ${Field_Name_05}
+    Scroll Element Into View  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn3}
+    Click Element  ${Field_Value_Elem}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Field_Value_01}
+    Scroll Element Into View  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn2}
+    Scroll Element Into View  ${New_Field_Value_Txtbox_01}  
+    Input Text  ${New_Field_Value_Txtbox_01}    ${New_Field_Value_04}
+
+User tests the new transformation
+    Click Button  ${Test_Btn_01}
+    Click Element  ${Select_Event_Dropdown}
+    Input Text  ${Search_Icon}  ${Event_Name_01}
+    Press Keys  None  ARROW_DOWN
+    Press Keys  None  RETURN 
+    Click Button  ${Get_Sample_Btn}
+    Sleep  1
+    Click Button  ${Test_Btn_02}
+    Sleep  3
+    Click Button  ${Deploy_Btn}
+
+User runs the event again to apply new transformation
+    Click Element  ${Ovrview_Icon}
+    Click Element  ${Src_Object_Elem}
+    Input Text  ${Src_Object_Text_Elem}  ${Event_Name_01}
+    Sleep  1
+    Click Element  ${Vertical_Bar_Icon}
+    Click Element  ${Run_Now_Opt}
+
+User drags find and replace transformation and provide the details
+    Drag And Drop  ${Find_Replace_Elem}  ${Workflow_Transf_Elem}
+    Click Button  ${Add_Filter_Btn1}
+    Click Element  ${Event_Type_Option}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Event_Value_02}
+    Click Button  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn3}
+    Click Element  ${Field_Name_Elem_01}
+    Click Element  ${Equals_Option}
+    Scroll Element Into View  ${Enter_Value_Txtbox}
+    Input Text  ${Enter_Value_Txtbox}  ${Field_Name_05}
+    Scroll Element Into View  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn2}
+    Input Text  ${Find_Elem_txtbox}  ${Field_Value_01}
+    Input Text  ${Replace_Elem_Txtbox}  ${Replace_Value}
+    Click Element  ${Match_Case_Checkbox}
+
 Close the Browser
     Close Browser
  
