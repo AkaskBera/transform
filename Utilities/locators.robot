@@ -74,7 +74,6 @@ ${Search_Bar_Elem}  xpath://input[@type='text']
 ${Tbl_Name}  ab_demo_departments
 ${Db_Query}  SELECT * FROM "demo"."public"."ab_demo_departments";
 ${Workbench_Elem}  xpath://div[@class='CodeMirror-scroll']
-#//div[@class='CodeMirror-lines']
 ${Txt_09}  User enters the select query and executes the query.
 ${Run_Query_Btn}  xpath://button[@class='btn btn-secondary btn-thumbnail-left']
 ${Qry_Result_Txt}  Query Results
@@ -108,3 +107,8 @@ ${Find_Elem_txtbox}  xpath://input[@placeholder='Find']
 ${Replace_Elem_Txtbox}  xpath://input[@placeholder='Replace']
 ${Replace_Value}  D666
 ${Match_Case_Checkbox}  xpath://mat-checkbox[@name='match-case']
+
+${Mask_Field_Elem}  xpath://div[text()=' Mask Fields ']
+${Field_Value_02}  d005
+${Tbl_Name_03}  tablemysql_demo_dept_manager
+${Db_Query_03}  SELECT * FROM "demo"."public"."tablemysql_demo_dept_manager";

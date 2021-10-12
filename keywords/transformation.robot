@@ -3,7 +3,7 @@
 Open the Browser
     Open Browser  ${Url}  ${Browser}
     Maximize Browser Window
-    Set Selenium Implicit Wait  30 seconds 
+    Set Selenium Implicit Wait  30 seconds
     
 User is alowed to login to Hevo
     Input Text  ${Email_Elem}  ${Email_Id}
@@ -148,7 +148,7 @@ User tests the new transformation
     Press Keys  None  ARROW_DOWN
     Press Keys  None  RETURN 
     Click Button  ${Get_Sample_Btn}
-    Sleep  1
+    Sleep  2
     Click Button  ${Test_Btn_02}
     Sleep  3
     Click Button  ${Deploy_Btn}
@@ -179,6 +179,26 @@ User drags find and replace transformation and provide the details
     Input Text  ${Replace_Elem_Txtbox}  ${Replace_Value}
     Click Element  ${Match_Case_Checkbox}
 
+User drags Mask Fields transformation and provide the details
+    Drag And Drop  ${Mask_Field_Elem}  ${Workflow_Transf_Elem}
+    Click Button  ${Add_Filter_Btn1}
+    Click Element  ${Event_Type_Option}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Event_Value_02}
+    Click Button  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn3}
+    Click Element  ${Field_Name_Elem_01}
+    Click Element  ${Equals_Option}
+    Scroll Element Into View  ${Enter_Value_Txtbox}
+    Input Text  ${Enter_Value_Txtbox}  ${Field_Name_05}
+    Scroll Element Into View  ${Add_Filter_Btn2}
+    Click Button  ${Add_Filter_Btn2}
+    Execute JavaScript  window.scrollTo(0,-100)
+    Click Button  ${Add_Filter_Btn3}
+    Click Element  ${Field_Value_Elem}
+    Click Element  ${Equals_Option}
+    Input Text  ${Enter_Value_Txtbox}  ${Field_Value_02}
+    Click Element  ${Add_Filter_Btn2}
+
 Close the Browser
     Close Browser
- 

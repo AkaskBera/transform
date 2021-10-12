@@ -96,7 +96,7 @@ User fetches the table data for new transformation
     Press Keys  ${Workbench_Elem}  ${EMPTY}
     Click Element  ${Run_Query_Btn}
 
-User verifies the change field value transformation transformation
+User verifies the change field value transformation
     Wait until page contains  ${Qry_Result_Txt}
     ${Row_Count} =  Get Element Count  ${Tbl_Row}
     ${Col_Count} =  Get Element Count  ${Tbl_Col}
@@ -110,7 +110,7 @@ User verifies the change field value transformation transformation
     END
     Log to console  Field value is changed in the destination
 
-User verifies the find and replace transformation transformation
+User verifies the find and replace transformation
     Wait until page contains  ${Qry_Result_Txt}
     ${Row_Count} =  Get Element Count  ${Tbl_Row}
     ${Col_Count} =  Get Element Count  ${Tbl_Col}
@@ -123,3 +123,31 @@ User verifies the find and replace transformation transformation
         Exit For Loop If   "${Col_Value}" == "D666"
     END
     Log to console  Find and replace transformation is applied in the destination
+
+User navigates to workbench section in destination for the transformation
+    Click Element  ${Workbench_Link}
+    Page Should Contain  ${Dest_Name}
+    Wait Until Element Is Visible  ${Search_Icon_Elem}
+    Click Element  ${Search_Icon_Elem}
+    Input Text  ${Search_Bar_Elem}  ${Tbl_Name_03}
+
+User fetches the table data for the transformation
+    Execute Javascript  _editor = document.querySelector('.CodeMirror').CodeMirror;
+    Execute Javascript  _editor.setValue('${Db_Query_03}');
+    Press Keys  ${Workbench_Elem}  ${SPACE}
+    Press Keys  ${Workbench_Elem}  ${EMPTY}
+    Click Element  ${Run_Query_Btn}
+
+User verifies the Mask Fields transformation
+    Wait until page contains  ${Qry_Result_Txt}
+    ${Row_Count} =  Get Element Count  ${Tbl_Row}
+    ${Col_Count} =  Get Element Count  ${Tbl_Col}
+    Log to console  ${Row_Count}
+    Log to console   ${Col_Count}
+    Table Header Should Contain  ${Table}  ${Field_Name_05}
+    FOR  ${j}  IN RANGE  1  ${Row_Count}
+    ${Col_Value} =  Get Text  xpath=//table/tbody/tr[${j}]/td[2]
+    Log to console   ${Col_Value}
+        Exit For Loop If   "${Col_Value}" == "*****"
+    END
+    Log to console  Mask Fields transformation is applied in the destination

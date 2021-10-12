@@ -43,13 +43,13 @@ User is naviagting to destination and verifies change field value transformation
     And User is navigating to destination
     When User navigates to workbench section in destination for transformation01
     And User fetches the table data for new transformation
-    Then User verifies the change field value transformation transformation
+    Then User verifies the change field value transformation
 
 User navigates to MySql Pipeline and applies find and replace transformation
     [Tags]  transformation02
     Given User is alowed to login to Hevo
     And User navigates to the pipleine
-    when User navigates to the transformation section and selects Drag Drop
+    When User navigates to the transformation section and selects Drag Drop
     And User drags find and replace transformation and provide the details
     Then User tests the new transformation
     And User runs the event again to apply new transformation
@@ -60,4 +60,22 @@ User is naviagting to destination and verifies find and replace transformation
     And User is navigating to destination
     When User navigates to workbench section in destination for transformation01
     And User fetches the table data for new transformation
-    Then User verifies the find and replace transformation transformation
+    Then User verifies the find and replace transformation
+
+User navigates to MySql Pipeline and applies Mask Fields transformation
+    [Tags]  transformation03
+    Given User is alowed to login to Hevo
+    And User navigates to the pipleine
+    When User navigates to the transformation section and selects Drag Drop
+    And User drags Mask Fields transformation and provide the details
+    Then User tests the new transformation
+    And User runs the event again to apply new transformation
+
+User is naviagting to destination and verifies Mask Fields transformation
+    [Tags]  destination04
+    Given User is alowed to login to Hevo
+    And User is navigating to destination
+    When User navigates to workbench section in destination for the transformation
+    And User fetches the table data for the transformation
+    Then User verifies the Mask Fields transformation
+
