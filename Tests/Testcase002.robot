@@ -29,6 +29,7 @@ User is naviagting to destination and verifies webhook transformation
     Then User verifies the transformation
 
 User navigates to MySql Pipeline and applies change field value transformation
+    [Documentation]  Change Field Value Transformation
     [Tags]  transformation01
     Given User is alowed to login to Hevo
     And User navigates to the pipleine
@@ -46,6 +47,7 @@ User is naviagting to destination and verifies change field value transformation
     Then User verifies the change field value transformation
 
 User navigates to MySql Pipeline and applies find and replace transformation
+    [Documentation]  Find and Replace Transformation
     [Tags]  transformation02
     Given User is alowed to login to Hevo
     And User navigates to the pipleine
@@ -63,6 +65,7 @@ User is naviagting to destination and verifies find and replace transformation
     Then User verifies the find and replace transformation
 
 User navigates to MySql Pipeline and applies Mask Fields transformation
+    [Documentation]  Mask Field Transformation
     [Tags]  transformation03
     Given User is alowed to login to Hevo
     And User navigates to the pipleine
@@ -79,3 +82,62 @@ User is naviagting to destination and verifies Mask Fields transformation
     And User fetches the table data for the transformation
     Then User verifies the Mask Fields transformation
 
+User navigates to MySql Pipeline and applies Hash Fields transformation
+    [Documentation]  Hash Field Transformation
+    [Tags]  transformation04
+    Given User is alowed to login to Hevo
+    And User navigates to the pipleine
+    When User navigates to the transformation section and selects Drag Drop
+    And User drags Hash Fields transformation and provide the details
+    Then User tests the new transformation
+    And User runs the event again to apply new transformation
+
+User is naviagting to destination and verifies Hash Fields transformation
+    [Tags]  destination05
+    Given User is alowed to login to Hevo
+    And User is navigating to destination
+    When User navigates to workbench section in destination for the transformation
+    And User fetches the table data for the transformation
+    Then User verifies the Hash Fields transformation
+
+User navigates to MySql Pipeline and applies Modify Test Casing transformation
+    [Documentation]  Modify Test Casing Transformation
+    [Tags]  transformation05
+    Given User is alowed to login to Hevo
+    And User navigates to the pipleine
+    When User navigates to the transformation section and selects Drag Drop
+    And User drags Modify Test Casing transformation and provide the details
+    Then User tests the transformation applied to the event
+    And User runs the event again
+
+User is naviagting to destination and verifies Modify Test Casing transformation
+    [Tags]  destination06
+    Given User is alowed to login to Hevo
+    And User is navigating to destination
+    When User navigates to workbench section in destination for the Modify Test Casing transformation
+    And User fetches the table data for the Modify Test Casing transformation
+    Then User verifies the Modify Test Casing transformation
+
+User navigates to MySql Pipeline and applies Rename Events transformation
+    [Documentation]  Rename Events Transformation
+    [Tags]  transformation06
+    Given User is alowed to login to Hevo
+    And User navigates to the pipleine
+    When User navigates to the transformation section and selects Drag Drop
+    And User drags Rename Events transformation and provide the details
+    Then User tests the new transformation
+    And User runs the event again to apply new transformation
+
+User is naviagting to destination and verifies Rename Events transformation
+    [Tags]  destination07
+    Given User is alowed to login to Hevo
+    And User is navigating to destination
+    When User navigates to workbench section in destination for the Rename Events transformation
+    And User fetches the table data for the Rename Events transformation
+
+User navigates to MySql Pipeline and applies Format Number to String transformation
+    [Tags]  transformation07
+    Given User is alowed to login to Hevo
+    And User navigates to the pipleine
+    When User navigates to the transformation section and selects Drag Drop
+    And User drags Format Number to String transformation and provide the details

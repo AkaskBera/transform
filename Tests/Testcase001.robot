@@ -8,16 +8,17 @@ Test Setup  Open the Browser
 Test Teardown  Close the Browser 
 
 *** Test Cases ***
-User navigates to a pipeline and applies transformation
+User navigates to a pipeline and applies add field transformation
+    [Documentation]  Add Field Transformation
     [Tags]  transformation01
     Given User is alowed to login to Hevo
     When User navigates to the pipleine
     And User navigates to the transformation section and selects Drag Drop
-    And User drags a transformation block and provide the transformation details
+    And User drags add field transformation block and provide the transformation details
     Then User tests the transformation applied to the event
     And User runs the event again
 
-User is naviagting to destination and verifying the transformation
+User is naviagting to destination and verifying the add field transformation
     [Tags]  destination01
     Given User is alowed to login to Hevo
     And User is navigating to destination
@@ -26,6 +27,7 @@ User is naviagting to destination and verifying the transformation
     User verifies the first transformation
 
 User applies another transformation along with the existing transformation
+    [Documentation]  Drop Field Transformation
     [Tags]  transformation02
     Given User is alowed to login to Hevo
     And User navigates to the pipleine
@@ -43,6 +45,7 @@ User is naviagting to destination and verifying new transformation
     User verifies the next transformation
     
 User is applying if-else transformation
+    [Documentation]  If-Else and continuous transformation
     [Tags]  transformation03
     Given User is alowed to login to Hevo
     And User navigates to the pipleine

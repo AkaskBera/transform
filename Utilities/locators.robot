@@ -12,12 +12,9 @@ ${Dark_Mode_Txt}  Hevo now has a Dark Mode
 ${Pipeline_Label_Elem}  xpath://a[@iconname='pipeline']
 ${Pipeline}  xpath://div[text()=' MySQL01 ']
 ${Transf_Elem}  xpath://a[@iconname='transformation']
-${Txt_01}  User navigates to the pipeline
 ${Product_Tour_Icon}  xpath://div[@class='product-tour-icon-button-wrapper']
 ${Drag_Drop_Option}  xpath://hd-menu-item[text()=' Switch to Drag-and-Drop UI ']
 ${Continue_Btn}  xpath://button[text()=' Continue ']
-${Txt_02}  User selects the drag and drop transformation
-${Txt_03}  User drags add a field transformation
 ${Add_Field_Elem}  xpath://div[text()=' Add a Field ']
 ${Workflow_Transf_Elem}  xpath://div[@class='workflow-container']
 ${Add_Filter_Btn1}  xpath://button[text()=' Add Filter ']
@@ -31,7 +28,6 @@ ${Field_Name_01}  dept_loc
 ${New_Field_Value_Txtbox}  xpath://input[@name='field-value']
 ${New_Field_Value_01}  "India"
 
-${Txt_04}  User applies the transformation
 ${Test_Btn_01}  xpath://button[@class='btn btn-secondary']
 ${Select_Event_Dropdown}  xpath://span[text()=' Select Event Type ']
 ${Search_Icon}  xpath://input[@placeholder='Select Event Type']
@@ -39,7 +35,6 @@ ${Event_Name}  demo.departments
 ${Get_Sample_Btn}  xpath://button[text()=' Get Sample ']
 ${Test_Btn_02}  xpath://button[@class='btn btn-primary']
 ${Deploy_Btn}  xpath://button[text()=' Deploy ']
-${Txt_05}  User deploys the transformation
 ${Build_Btn}  xpath://div[@class='btn-group btn-group-toggle']/button[1]
 ${Drop_Field_Elem}  xpath://div[text()=' Drop Fields ']
 ${Add_Filter_Btn3}  xpath://filter-group[@class='mt-4 ng-star-inserted']/button
@@ -63,18 +58,14 @@ ${Field_Value}  Marketing
 
 #destination
 ${Dest_Label_Elem}  xpath://a[@iconname='destinations']
-${Txt_06}  User navigates to destination
-${Dest_Elem}  xpath://span[text()=' #6 ']
+${Dest_Elem}  xpath://span[text()=' #9 ']
 ${Workbench_Link}  xpath://a[@label='Workbench']
-${Txt_07}  User navigates to the workbench section
 ${Dest_Name}  Redshift01
 ${Search_Icon_Elem}  xpath://searcharea[@placeholder='Search Schema']
-${Txt_08}  User search for the destination table
 ${Search_Bar_Elem}  xpath://input[@type='text']
 ${Tbl_Name}  ab_demo_departments
 ${Db_Query}  SELECT * FROM "demo"."public"."ab_demo_departments";
 ${Workbench_Elem}  xpath://div[@class='CodeMirror-scroll']
-${Txt_09}  User enters the select query and executes the query.
 ${Run_Query_Btn}  xpath://button[@class='btn btn-secondary btn-thumbnail-left']
 ${Qry_Result_Txt}  Query Results
 ${Tbl_Row}  xpath://table/tbody/tr
@@ -92,7 +83,7 @@ ${New_Field_Value_03}  "Insurance"
 ${Tbl_Name_01}  wb_agents
 ${Db_Query_01}  SELECT * FROM "demo"."public"."wb_agents";
 
-${Chage_Field_Value_Elem}  xpath://div[text()=' Change Field Values ']
+${Change_Field_Value_Elem}  xpath://div[text()=' Change Field Values ']
 ${Event_Value_02}  demo.dept_manager
 ${Field_Name_05}  dept_no
 ${Field_Value_Elem}  xpath://fs-option[text()=' Field Value ']
@@ -107,8 +98,36 @@ ${Find_Elem_txtbox}  xpath://input[@placeholder='Find']
 ${Replace_Elem_Txtbox}  xpath://input[@placeholder='Replace']
 ${Replace_Value}  D666
 ${Match_Case_Checkbox}  xpath://mat-checkbox[@name='match-case']
-
 ${Mask_Field_Elem}  xpath://div[text()=' Mask Fields ']
 ${Field_Value_02}  d005
 ${Tbl_Name_03}  tablemysql_demo_dept_manager
 ${Db_Query_03}  SELECT * FROM "demo"."public"."tablemysql_demo_dept_manager";
+${Hash_Field_Elem}  xpath://div[text()=' Hash Fields ']
+${Field_Name_06}  emp_no
+${Field_Value_03}  110567
+${Hashing_Dropdown_Elem}  xpath://flexible-select[@placeholder='Hashing Algorithm']
+${Dropdown_Option}  xpath://fs-option[text()=' MD5 ']
+${Modify_Text_Casing_Elem}  xpath://div[text()=' Modify Text Casing ']
+${Text_Case_Elem}  xpath://div[text()='Text Case']
+${Upper_Case_Option}  xpath://fs-option[text()=' To Upper Case ']
+${Tbl_Name_04}  tablemysql_demo_departments
+${Db_Query_04}  SELECT * FROM "demo"."public"."tablemysql_demo_departments";
+${Rename_Events_Elem}  xpath://div[text()=' Rename Events ']
+${New_Event_Name_Txtfield}  xpath://input[@placeholder='New Name']
+${New_Event_Name}  dept.manager
+${Tbl_Name_05}  tblmysql01_dept_manager
+${Db_Query_05}  SELECT * FROM "demo"."public"."tblmysql01_dept_manager";
+${Format_Date_To_String}  xpath://div[text()=' Format Number to String ']
+${String_Format_Elem}  xpath://div[text()='String Format']
+${Number_Option}  xpath://span[text()='Number']
+
+${Delete_Block_Elem}  xpath://button[@class='btn-error size-xs ng-star-inserted']
+${Confirm_Btn}  xpath://button[text()=' Confirm ']
+${Rename_Event_Block}  xpath://figure[@class='Rename_Event']
+${Drop_Event_Block}  xpath://figure[@class='Filter_Columns']
+${Change_Field_Value_Block}  xpath://figure[@class='Change_Field_Value']
+${Find_And_Replace_Block}  xpath://figure[@class='Find_and_Replace']
+${Mask_Field_Block}  xpath://figure[@class='Mask_a_Field']
+${Hash_Field_Block}  xpath://figure[@class='Hash_a_field']
+${Modify_Text_Casing_Block}  xpath://figure[@class='Text_Casing']
+${Add_Field_Block}  xpath://figure[@class='Add_New_Field']
