@@ -8,7 +8,7 @@ Resource  ../keywords/destination.robot
 Resource  ../keywords/webhook.robot
 
 Test Setup  Open the Browser
-#Test Teardown  Close the Browser
+Test Teardown  Close the Browser
 
 *** Test Cases ***
 User navigates to a webhook pipeline and applies transformation
